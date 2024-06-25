@@ -42,7 +42,7 @@ public class VelocityCompressClientTest {
             @Override
             public void active(Connection connection) {
                 connection.sendPacket(new ClientHandshakePacket(765,"127.0.0.1",25565, (byte) 2));
-                connection.sendPacket(new ClientLoginStartPacket("1381", UUID.randomUUID()));
+                connection.sendPacket(new ClientLoginStartPacket("LSProtocolTest", UUID.randomUUID()));
                 connection.setConnectionState(ConnectionState.LOGIN);
             }
             @Override
