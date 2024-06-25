@@ -23,6 +23,12 @@ public class PacketRegistry {
                 .subRegister(packetDirection,packet);
     }
 
+    public void unregisterPacket(ConnectionState connectionState, PacketDirection packetDirection, byte packetId){
+        var element = packetElements.get(connectionState);
+        assert element != null : "Connection state not found in registry";
+        element.subUnregister(packetDirection,packetId);
+    }
+
     public Packet getPacket(ConnectionState connectionState, PacketDirection packetDirection, byte id){
         //Int -> byte conversion to save memory ¯\_(ツ)_/¯
         assert id < Byte.MAX_VALUE : "Packet id out of bounds!";

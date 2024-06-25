@@ -30,6 +30,13 @@ public class PacketRegistryElement {
         }
     }
 
+    public void subUnregister(PacketDirection direction, byte packetId) {
+        switch(direction){
+            case SERVERBOUND -> SERVER_BOUND.remove(packetId);
+            case CLIENTBOUND -> CLIENT_BOUND.remove(packetId);
+        };
+    }
+
     public Packet getPacket(PacketDirection direction, byte packetId){
         return switch(direction){
             case SERVERBOUND -> SERVER_BOUND.get(packetId);
