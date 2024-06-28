@@ -71,7 +71,7 @@ public class PacketRegistry {
         LightProtocol.getLogger().info("PacketRegistry took " + eT + "ms to load packets!");
     }
 
-    private void loadPacketsFromPackage(String packageName){
+    public void loadPacketsFromPackage(String packageName){
         try {
             ClassUtils.getClasses(packageName).forEach(aClass -> {
                 if (aClass.isAnnotationPresent(Packet.PacketInfo.class)) {
