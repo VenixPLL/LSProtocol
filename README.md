@@ -7,6 +7,11 @@ LSProtocol is a free and open-source Minecraft protocol library that supports **
 ### Build Requirements
 - Java 21
 
+### Building from source
+- Ensure your JDK Version is 21
+- Run ```mvn package```
+- 2 Jars will be created in `/target` folder, one fat-jar and one clean.
+
 ### Features
 - Ability to create your own packets (for adding support for base 1.8.x(47) protocol)
 - Enabling support for entire ViaVersion using [ViaLoader](https://github.com/ViaVersion/ViaLoader)
